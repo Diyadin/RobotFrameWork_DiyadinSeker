@@ -4,7 +4,7 @@ Library                                        Selenium2Library
 Library                                        OperatingSystem
 Library                                        DateTime
 
-#Keywords with complete test steps
+#Keywords that perform complete steps
 *** Keywords ***
 Setup
     Set Environment Variable                   ${driverName}          ${chromedriverPath}    
@@ -54,11 +54,37 @@ editReservation
     Wait Until Page Contains Element           ${menu_reservation}
     Click Element                              ${menu_reservation}
     Title Should Be                            ${reservation_title}
-    Wait Until Page Contains Element           ${edit_reservation_button}
-    Click Element                              ${edit_reservation_button}
+    Wait Until Page Contains Element           ${edit_reservation_button_lastIndex}
+    Click Element                              ${edit_reservation_button_lastIndex}
     Wait Until Page Contains Element           ${entryDate_location}
     Title Should Be                            ${edit_reservation_title}
     input_entryDate
     input_exitDate
+    Click Element                              ${reservation_save_button}
+    Wait Until Page Contains Element           ${edit_reservation_successful}
+    Click Element                              ${edit_showAllReservation_button}
+    Wait Until Page Contains Element           ${reservation_table}
+    Title Should Be                            ${reservation_title}
+    reservation_verifyEntryDate
     
+createNewClient
+    Wait Until Page Contains Element           ${menu_client}
+    Click Element                              ${menu_client}
+    Wait Until Page Contains Element           ${create_new_client_button}
+    Title Should Be                            ${client_title}
+    Click Element                              ${create_new_client_button}
+    Wait Until Page Contains Element           ${create_new_client_nameField}
+    Title Should Be                            ${newClient_title}
+    input_randomName                           
+    input_randomEmail
+    Click Element                              ${create_new_client_genderBtnMale}
+    input_randomSocialSecurityNumber
+    Click Element                              ${create_new_client_saveButton}
+    Wait Until Page Contains Element           ${create_new_client_clientCreatedVerify}
+    Title Should Be                            ${create_new_client_clientCreatedTitle}
+    client_createdVerification
+    Click Element                              ${create_new_client_clientCreatedDelete}
+    Wait Until Page Contains Element           ${create_new_client_clientDeleted}
+    client_deletedVerification
+               
     

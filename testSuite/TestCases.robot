@@ -8,6 +8,9 @@ Test setup                            Setup
 Test teardown                         Teardown
 
 *** Test cases ***
+
+#All Test cases only call for Keywords, within these Keywords are step-by-step methods
+    
 Create New Reservation
     performLogin
     createNewReservation
@@ -16,4 +19,10 @@ Create New Reservation
 Edit a Reservation
     performLogin
     editReservation
-    
+    performLogout
+ 
+Create a New Client
+    performLogin
+    createNewClient
+    performLogout
+     
