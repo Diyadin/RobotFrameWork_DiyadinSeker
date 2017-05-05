@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170503 11:01:42.495" generator="Robot 3.0.2 (Python 2.7.12 on linux2)">
+<suite source="/home/robot/workspace/Assignment_RickardBerglund_DiyadinSeker/Robot.robot" id="s1" name="Robot">
+<test id="s1-t1" name="Test_Create_New_Reservation">
+<kw type="setup" name="Setup">
+<kw name="Set Environment Variable" library="OperatingSystem">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>webdriver.chrome.driver</arg>
+<arg>/usr/local/bin/chromedriver</arg>
+</arguments>
+<msg timestamp="20170503 11:01:43.298" level="INFO">Environment variable 'webdriver.chrome.driver' set to value '/usr/local/bin/chromedriver'.</msg>
+<status status="PASS" endtime="20170503 11:01:43.298" starttime="20170503 11:01:43.298"></status>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://localhost:8080/hotel/faces/login/login.xhtml</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20170503 11:01:43.299" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080/hotel/faces/login/login.xhtml'</msg>
+<status status="PASS" endtime="20170503 11:01:48.684" starttime="20170503 11:01:43.298"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170503 11:01:48.948" starttime="20170503 11:01:48.684"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>.3</arg>
+</arguments>
+<status status="PASS" endtime="20170503 11:01:48.949" starttime="20170503 11:01:48.948"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="Selenium2Library">
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<arguments>
+<arg>20</arg>
+</arguments>
+<status status="PASS" endtime="20170503 11:01:49.253" starttime="20170503 11:01:48.949"></status>
+</kw>
+<kw name="Delete All Cookies" library="Selenium2Library">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" endtime="20170503 11:01:49.582" starttime="20170503 11:01:49.254"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Login</arg>
+</arguments>
+<status status="PASS" endtime="20170503 11:01:49.927" starttime="20170503 11:01:49.583"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>http://localhost:8080/hotel/faces/login/login.xhtml</arg>
+</arguments>
+<msg timestamp="20170503 11:01:50.239" level="INFO">Current location is 'http://localhost:8080/hotel/faces/login/login.xhtml'.</msg>
+<status status="PASS" endtime="20170503 11:01:50.240" starttime="20170503 11:01:49.928"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Hotel Accomodation - login page</arg>
+</arguments>
+<msg timestamp="20170503 11:01:50.554" level="INFO">Page title is 'Hotel Accomodation - login page'.</msg>
+<status status="PASS" endtime="20170503 11:01:50.555" starttime="20170503 11:01:50.241"></status>
+</kw>
+<status status="PASS" endtime="20170503 11:01:50.556" starttime="20170503 11:01:43.297"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=formLogin:login</arg>
+<arg>marc</arg>
+</arguments>
+<msg timestamp="20170503 11:01:50.557" level="INFO">Typing text 'marc' into text field 'id=formLogin:login'</msg>
+<status status="PASS" endtime="20170503 11:01:51.718" starttime="20170503 11:01:50.557"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=formLogin:senha</arg>
+<arg>1010</arg>
+</arguments>
+<msg timestamp="20170503 11:01:51.719" level="INFO">Typing text '1010' into text field 'id=formLogin:senha'</msg>
+<status status="PASS" endtime="20170503 11:01:52.858" starttime="20170503 11:01:51.719"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=formLogin:j_idt27</arg>
+</arguments>
+<msg timestamp="20170503 11:01:52.860" level="INFO">Clicking element 'name=formLogin:j_idt27'.</msg>
+<status status="PASS" endtime="20170503 11:01:55.200" starttime="20170503 11:01:52.859"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="side-menu"]/li[7]/a</arg>
+</arguments>
+<status status="PASS" endtime="20170503 11:01:55.556" starttime="20170503 11:01:55.201"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Dashboard</arg>
+</arguments>
+<msg timestamp="20170503 11:01:55.870" level="INFO">Page title is 'Dashboard'.</msg>
+<status status="PASS" endtime="20170503 11:01:55.870" starttime="20170503 11:01:55.557"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="side-menu"]/li[6]/a</arg>
+</arguments>
+<msg timestamp="20170503 11:01:55.872" level="INFO">Clicking element 'xpath=//*[@id="side-menu"]/li[6]/a'.</msg>
+<status status="PASS" endtime="20170503 11:01:57.494" starttime="20170503 11:01:55.871"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="j_idt49"]/a[1]</arg>
+</arguments>
+<status status="PASS" endtime="20170503 11:01:57.859" starttime="20170503 11:01:57.495"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>List</arg>
+</arguments>
+<msg timestamp="20170503 11:01:58.173" level="INFO">Page title is 'List'.</msg>
+<status status="PASS" endtime="20170503 11:01:58.174" starttime="20170503 11:01:57.860"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="j_idt49"]/a[1]</arg>
+</arguments>
+<msg timestamp="20170503 11:01:58.176" level="INFO">Clicking element 'xpath=//*[@id="j_idt49"]/a[1]'.</msg>
+<status status="PASS" endtime="20170503 11:02:01.564" starttime="20170503 11:01:58.175"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="page-wrapper"]/div/div/div/h1</arg>
+</arguments>
+<status status="PASS" endtime="20170503 11:02:01.899" starttime="20170503 11:02:01.565"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Create New Hotel Reservation</arg>
+</arguments>
+<msg timestamp="20170503 11:02:02.205" level="INFO">Page title is 'Create New Hotel Reservation'.</msg>
+<status status="PASS" endtime="20170503 11:02:02.206" starttime="20170503 11:02:01.900"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=entryDate</arg>
+</arguments>
+<msg timestamp="20170503 11:02:02.208" level="INFO">Clicking element 'id=entryDate'.</msg>
+<status status="PASS" endtime="20170503 11:02:03.252" starttime="20170503 11:02:02.207"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/div[2]/div[1]/div/table/tbody/tr[3]/td[4]</arg>
+</arguments>
+<msg timestamp="20170503 11:02:03.254" level="INFO">Clicking element 'xpath=/html/body/div[2]/div[1]/div/table/tbody/tr[3]/td[4]'.</msg>
+<status status="PASS" endtime="20170503 11:02:04.205" starttime="20170503 11:02:03.253"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/div[2]/div[3]/div/button[1]</arg>
+</arguments>
+<msg timestamp="20170503 11:02:04.207" level="INFO">Clicking element 'xpath=/html/body/div[2]/div[3]/div/button[1]'.</msg>
+<status status="PASS" endtime="20170503 11:02:05.069" starttime="20170503 11:02:04.206"></status>
+</kw>
+<kw type="teardown" name="Teardown">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20170503 11:02:05.459" starttime="20170503 11:02:05.070"></status>
+</kw>
+<status status="PASS" endtime="20170503 11:02:05.460" starttime="20170503 11:02:05.069"></status>
+</kw>
+<status status="PASS" endtime="20170503 11:02:05.460" critical="yes" starttime="20170503 11:01:43.296"></status>
+</test>
+<status status="PASS" endtime="20170503 11:02:05.461" starttime="20170503 11:01:42.496"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Robot" pass="1">Robot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
