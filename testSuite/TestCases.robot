@@ -11,18 +11,18 @@ Test teardown                         Teardown
 
 #All Test cases only call for Keywords, within these Keywords are step-by-step methods
     
-Create New Reservation
-    performLogin
-    createNewReservation
-    performLogout
+#Create New Reservation
+ #   performLogin
+  #  createNewReservation
+   # performLogout
     
 Edit a Reservation
     performLogin
     editReservation
     performLogout
  
-Create a New Client
-    performLogin
-    createNewClient
-    performLogout
+#Create a New Client
+ #   performLogin
+  #  createNewClient
+   # performLogout
      

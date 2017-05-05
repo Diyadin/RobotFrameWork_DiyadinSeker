@@ -13,9 +13,9 @@ Setup
     Set Selenium Speed                         .2
     Set Selenium Timeout                       30
     Delete All Cookies
-    #Wait Until Page Contains                  Login    
+    Wait Until Page Contains                  Login    
     Location Should be                         ${baseUrl}  
-    #Title Should be                           Hotel Accomodation - login page                        
+    Title Should be                           Hotel Accomodation - login page                        
    
 Teardown    
     Close All Browsers 
@@ -34,6 +34,7 @@ performLogout
     Wait Until Page Contains                   ${login_pg_label_login}     
     Title Should Be                            ${login_pg_title}   
    
+   #TestCase - Create New Reservation
 createNewReservation
     Wait Until Page Contains Element           ${menu_reservation}
     Click Element                              ${menu_reservation}
@@ -50,6 +51,7 @@ createNewReservation
     Wait Until Page Contains Element           ${reservation_error_message}
     Element Should Be Visible                  ${reservation_error_message}
     
+    #TestCase - Edit an existing Reservation
 editReservation
     Wait Until Page Contains Element           ${menu_reservation}
     Click Element                              ${menu_reservation}
@@ -67,6 +69,7 @@ editReservation
     Title Should Be                            ${reservation_title}
     reservation_verifyEntryDate
     
+    #TestCase - Create a new Client
 createNewClient
     Wait Until Page Contains Element           ${menu_client}
     Click Element                              ${menu_client}
