@@ -38,14 +38,19 @@ performLogout
 createNewReservation
     Wait Until Page Contains Element           ${menu_reservation}
     Click Element                              ${menu_reservation}
-    Title Should Be                            ${reservation_title}
     Wait Until Page Contains Element           ${create_new_reservation_button}
+    Title Should Be                            ${reservation_title}
     Click Element                              ${create_new_reservation_button}
     Title Should Be                            ${create_new_reservation_title}
+    #Calls Keyword input_entryDate
     input_entryDate
+    #Calls Keyword input_exitDate
     input_exitDate
+    #Calls Keyword reservation_Bedroom
     reservation_Bedroom
+    #Calls Keyword reservation_Client
     reservation_Client
+    #Calls Keyword reservation_Status
     reservation_Status
     Click Element                              ${reservation_save_button}
     Wait Until Page Contains Element           ${reservation_error_message}
@@ -55,21 +60,24 @@ createNewReservation
 editReservation
     Wait Until Page Contains Element           ${menu_reservation}
     Click Element                              ${menu_reservation}
-    Title Should Be                            ${reservation_title}
     Wait Until Page Contains Element           ${edit_reservation_button_lastIndex}
+    Title Should Be                            ${reservation_title}
     Click Element                              ${edit_reservation_button_lastIndex}
     Wait Until Page Contains Element           ${entryDate_location}
     Title Should Be                            ${edit_reservation_title}
+    #Calls Keyword input_entryDate
     input_entryDate
+    #Calls Keyword input_exitDate
     input_exitDate
     Click Element                              ${reservation_save_button}
     Wait Until Page Contains Element           ${edit_reservation_successful}
     Click Element                              ${edit_showAllReservation_button}
     Wait Until Page Contains Element           ${reservation_table}
     Title Should Be                            ${reservation_title}
+    #Calls Keyword reservation_verifyEntryDate
     reservation_verifyEntryDate
     
-    #TestCase - Create a new Client
+    #TestCase - Create a new Client and Deletes it afterwards
 createNewClient
     Wait Until Page Contains Element           ${menu_client}
     Click Element                              ${menu_client}
@@ -78,16 +86,20 @@ createNewClient
     Click Element                              ${create_new_client_button}
     Wait Until Page Contains Element           ${create_new_client_nameField}
     Title Should Be                            ${newClient_title}
-    input_randomName                           
+    #Calls Keyword input_randomName
+    input_randomName                   
+    #Calls Keyword input_randomEmail        
     input_randomEmail
     Click Element                              ${create_new_client_genderBtnMale}
     input_randomSocialSecurityNumber
     Click Element                              ${create_new_client_saveButton}
     Wait Until Page Contains Element           ${create_new_client_clientCreatedVerify}
     Title Should Be                            ${create_new_client_clientCreatedTitle}
+    #Calls Keyword client_createdVerification
     client_createdVerification
     Click Element                              ${create_new_client_clientCreatedDelete}
     Wait Until Page Contains Element           ${create_new_client_clientDeleted}
+    #Calls Keyword client_deletedVerification
     client_deletedVerification
                
     
