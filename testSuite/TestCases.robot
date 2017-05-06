@@ -1,6 +1,12 @@
 *** Settings ***
-Resource                              ../resourceMap/variable.robot
-Resource                              ../setup/settings.robot
+Resource                              ../keywords/completeSteps_Keywords.robot
+Resource                              ../keywords/specificActions_Keywords.robot
+Resource                              ../variables/baseVariables.robot
+Resource                              ../variables/createAClientVariables.robot
+Resource                              ../variables/createAReservationVariables.robot
+Resource                              ../variables/editAReservationVariables.robot
+Resource                              ../variables/login_logoutVariables.robot
+Resource                              ../variables/titleVariables.robot
 Library                               Selenium2Library
 Library                               OperatingSystem
 
@@ -9,8 +15,8 @@ Test teardown                         Teardown
 
 *** Test cases ***
 
-#All Test cases only calls on Keywords, within these Keywords are step-by-step methods
-#All these keywords are stored in settings.robot
+#All Test cases only calls on Keywords, within these Keywords are step-by-step methods.
+#All these keywords are stored in keywords folder.
     
 Create New Reservation
     performLogin

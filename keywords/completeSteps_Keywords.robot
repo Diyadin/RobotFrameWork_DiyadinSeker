@@ -1,8 +1,14 @@
 *** Settings ***
-Resource                                       ../resourceMap/variable.robot
 Library                                        Selenium2Library
 Library                                        OperatingSystem
 Library                                        DateTime
+Resource                                       ../keywords/specificActions_Keywords.robot
+Resource                                       ../variables/baseVariables.robot
+Resource                                       ../variables/createAClientVariables.robot
+Resource                                       ../variables/createAReservationVariables.robot
+Resource                                       ../variables/editAReservationVariables.robot
+Resource                                       ../variables/login_logoutVariables.robot
+Resource                                       ../variables/titleVariables.robot
 
 #Keywords that perform complete steps
 *** Keywords ***
@@ -34,6 +40,7 @@ performLogout
     Wait Until Page Contains                   ${login_pg_label_login}     
     Title Should Be                            ${login_pg_title}   
    
+   
    #TestCase - Create New Reservation
 createNewReservation
     Wait Until Page Contains Element           ${menu_reservation}
@@ -41,6 +48,7 @@ createNewReservation
     Wait Until Page Contains Element           ${create_new_reservation_button}
     Title Should Be                            ${reservation_title}
     Click Element                              ${create_new_reservation_button}
+    Wait Until Page Contains Element           ${entryDate_location}
     Title Should Be                            ${create_new_reservation_title}
     #Calls Keyword input_entryDate
     input_entryDate
@@ -55,6 +63,7 @@ createNewReservation
     Click Element                              ${reservation_save_button}
     Wait Until Page Contains Element           ${reservation_error_message}
     Element Should Be Visible                  ${reservation_error_message}
+    
     
     #TestCase - Edit an existing Reservation
 editReservation
@@ -76,6 +85,7 @@ editReservation
     Title Should Be                            ${reservation_title}
     #Calls Keyword reservation_verifyEntryDate
     reservation_verifyEntryDate
+    
     
     #TestCase - Create a new Client and Deletes it afterwards
 createNewClient
@@ -101,5 +111,3 @@ createNewClient
     Wait Until Page Contains Element           ${create_new_client_clientDeleted}
     #Calls Keyword client_deletedVerification
     client_deletedVerification
-               
-    
