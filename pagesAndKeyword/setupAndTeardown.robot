@@ -5,7 +5,7 @@ Resource                 ../credentials/environmentVariables.robot
 
 Setup
     Set Environment Variable               ${driver_name}                ${chromedriver_location}
-    Open Browser                           ${baseURL}             browser=${chrome_browser}
+    Open Browser                           ${baseURL}                     browser=${chrome_browser}
     Maximize Browser Window
     Set Selenium Speed                      0.3                    
     Set Selenium Timeout                    5

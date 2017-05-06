@@ -2,20 +2,30 @@
 Library                       Selenium2Library
 Library                       OperatingSystem
 Library                       String
+Library                       DateTime
 
 Resource                      ./pagesAndKeyword/setupAndTeardown.robot
 Resource                      ./pagesAndKeyword/pageLogin.robot
-Resource                      ./pagesAndKeys/pageDashboard.robot
-Resource                      ./pagesAndKeyword/pageNavigateToCreateNewBill.robot
+Resource                      ./pagesAndKeyword/pageDashboard.robot
+Resource                      ./pagesAndKeyword/createNewBill.robot
+Resource                      ./pagesAndKeyword/createNewUser.robot   
+Resource                      ./pagesAndKeyword/createNewBedroom.robot
+
 
 Test setup                  Setup
 Test teardown               Teardown
 
 *** Test cases ***
-testLOGIN
-    Test_login_into_the_system
-    createNewBill
+testLoginAndCreateBedroom
+     Login_as_admin
+     createNewBedroom
+     perform logout
     
-
-
-    
+testCreateBill
+   Login_as_admin
+   createNewBillFailAndLogout
+    perform logout
+testNewUser
+    Login_as_admin
+    createNewUserFailure
+    perform logout
