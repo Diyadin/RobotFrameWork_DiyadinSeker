@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>robotFrameWork_MandatoryAssignment</name>
+=======
+	<name>Assignment_RickardBerglund_DiyadinSeker</name>
+>>>>>>> 482780b8f073f1a0a08c994544b23e213e113985
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
+<<<<<<< HEAD
 	</buildSpec>
 	<natures>
+=======
+		<buildCommand>
+			<name>org.robotframework.ide.eclipse.main.plugin.robotLibrariesBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.robotframework.ide.eclipse.main.plugin.robotNature</nature>
+>>>>>>> 482780b8f073f1a0a08c994544b23e213e113985
 	</natures>
 </projectDescription>
